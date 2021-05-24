@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<div class="row">
+		@foreach (var item in Model)
+		{
+			<div class="col-md-4">
+				<h3>
+					<a href="/post/@SlugGenerator.SlugGenerator.GenerateSlug(item.PostTitle)-@item.Id">
+						@item.PostTitle
+					</a>
+				</h3>
+				<p>@item.PostTeaser</p>
+			</div>
+		}
+	</div>
+</div>
